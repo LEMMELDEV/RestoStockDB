@@ -2,7 +2,7 @@
 {
     public class Platos
     {
-        public int IdPlato { get; set; } // Llave primaria
+        public int Id { get; set; } // Llave primaria
         public string Nombre { get; set; }
         public decimal PrecioVenta { get; set; }
         public string? Descripcion { get; set; }

@@ -15,7 +15,7 @@ namespace RestoStockDB.DATA
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                "Server=(localdb)\\mssqllocaldb;Database=SupermarketEF;Trusted_Connection=True;");
+                "Server=(localdb)\\mssqllocaldb;Database=RestoStockDB;Trusted_Connection=True;");
         }
     }
 }

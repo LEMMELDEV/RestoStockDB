@@ -2,7 +2,7 @@
 {
     public class Pedidos
     {
-        public int IdPedido { get; set; } // Llave primaria
+        public int Id { get; set; } // Llave primaria
 
         // Llave foránea
         public int IdProveedor { get; set; }

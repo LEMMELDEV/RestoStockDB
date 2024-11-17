@@ -5,7 +5,7 @@
         public int IdDetalle { get; set; } // Llave primaria
 
         // Llaves foráneas
-        public int IdPlato { get; set; }
+        public int Id { get; set; }
         public Platos Platos { get; set; }
 
         public int IdIngrediente { get; set; }
