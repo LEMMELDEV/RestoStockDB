@@ -10,5 +10,6 @@
         public string Direccion { get; set; }
 
         // Relación uno-a-muchos con Pedido
-        public ICollection<Pedido> Pedidos { get; set; }
+        public ICollection<Pedidos> Pedido { get; set; }
     }
+}
