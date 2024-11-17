@@ -9,6 +9,8 @@ namespace RestoStockDB.Models
             public decimal CantidadDisponible { get; set; }
             public string UnidadMedida { get; set; }
             public decimal PrecioUnitario { get; set; }
+        public ICollection<DetallePlato> DetallesPlato { get; set; }
+
     }
 
 }
