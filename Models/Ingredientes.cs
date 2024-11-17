@@ -2,7 +2,7 @@
 
 namespace RestoStockDB.Models
 {
-    public class Ingrediente
+    public class Ingredientes
     {
             public int IdIngrediente { get; set; } // PK
             public string Nombre { get; set; }
