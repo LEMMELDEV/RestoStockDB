@@ -6,10 +6,10 @@
 
         // Llaves foráneas
         public int IdPlato { get; set; }
-        public Plato Plato { get; set; }
+        public Platos Platos { get; set; }
 
         public int IdIngrediente { get; set; }
-        public Ingrediente Ingrediente { get; set; }
+        public Ingredientes Ingredientes { get; set; }
 
         public decimal Cantidad { get; set; }
 
