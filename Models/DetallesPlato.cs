@@ -1,6 +1,6 @@
 ﻿namespace RestoStockDB.Models
 {
-    public class DetallePlato
+    public class DetallesPlato
     {
         public int IdDetalle { get; set; } // Llave primaria
 
