@@ -5,7 +5,7 @@
     ViewData["Title"] = "Index Platos";
 }
 
-<h1>Index Platos</h1>
+<h1>PLATOS</h1>
 
 <p>
     <a asp-page="Create" class="btn btn-success">CREAR NUEVO</a>
@@ -43,6 +43,7 @@
 
                 </td>
                 <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-danger">Editar</a>
                 <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
                 </td>
                 <td>

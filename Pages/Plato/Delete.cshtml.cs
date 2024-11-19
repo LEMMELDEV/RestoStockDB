@@ -20,14 +20,14 @@ namespace RestoStockDB.Pages.Plato
             {
                 return NotFound();
             }
-            var Platos = await _context.Plato.FirstOrDefaultAsync(m => m.Id == id);
-            if (Platos == null)
+            var platos = await _context.Plato.FirstOrDefaultAsync(m => m.Id == id);
+            if (platos == null)
             {
                 return NotFound();
             }
             else
             {
-                Platos = Platos;
+                Platos = platos;
                 return Page();
             }
         }
@@ -41,13 +41,13 @@ namespace RestoStockDB.Pages.Plato
             }
             // Busca el Plato con el id proporcionado de forma asíncrona.
             var Platos = await _context.Plato.FindAsync(id);
-            // Si el método de pago no se encuentra, se devuelve un error 404.
+            // Si el Plato no se encuentra, se devuelve un error 404.
             if (Platos == null)
             {
                 return NotFound();
             }
             // Si se encuentra el Plato, se procede a eliminarlo.
-            Platos = Platos; // Asigna el Plato encontrado a la propiedad PayMode.
+            Platos = Platos; // Asigna el Plato encontrado a la propiedad Platos.
             _context.Plato.Remove(Platos); // Elimina el Plato del contexto.
             await _context.SaveChangesAsync(); // Guarda los cambios en la base de datos de forma asíncrona.
             // Redirige a la página de índice después de eliminar el Plato.
