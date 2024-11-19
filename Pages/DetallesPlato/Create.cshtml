@@ -1,0 +1,29 @@
+﻿@page
+@model RestoStockDB.Pages.DetallePlato.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>DetallesPlato</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Campo para Cantidad -->
+            <div class="form-group">
+                <label asp-for="DetallesPlato.Cantidad" class="control-label"></label>
+                <input asp-for="DetallesPlato.Cantidad" class="form-control" />
+                <span asp-validation-for="DetallesPlato.Cantidad" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-success" />
+                <a asp-page="Index" class="btn btn-primary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
