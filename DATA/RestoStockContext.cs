@@ -6,6 +6,14 @@ namespace RestoStockDB.DATA
 {
     public class RestoStockContext : DbContext
     {
+
+        // Constructor que recibe DbContextOptions
+        public RestoStockContext(DbContextOptions<RestoStockContext> options)
+            : base(options)
+        {
+        }
+
+
         public DbSet<DetallePlato> DetallesPlato { get; set; }
         public DbSet<Ingredientes> Ingrediente { get; set; }
         public DbSet<Pedidos> Pedido { get; set; }
@@ -14,8 +22,11 @@ namespace RestoStockDB.DATA
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(
-                "Server=(localdb)\\mssqllocaldb;Database=RestoStockDB;Trusted_Connection=True;");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(
+                    "Server=(localdb)\\mssqllocaldb;Database=RestoStockDB;Trusted_Connection=True;");
+            }
         }
     }
 }

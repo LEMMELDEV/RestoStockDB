@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using RestoStockDB.DATA;
+
 namespace RestoStockDB
 {
     public class Program
@@ -9,26 +12,31 @@ namespace RestoStockDB
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            // Agregando el contexto SupermarketContext a la aplicación
+            builder.Services.AddDbContext<RestoStockContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("RestoStockDB")));
+
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                // Configure the HTTP request pipeline.
+                if (!app.Environment.IsDevelopment())
+                {
+                    app.UseExceptionHandler("/Error");
+                    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                    app.UseHsts();
+                }
+
+                app.UseHttpsRedirection();
+                app.UseStaticFiles();
+
+                app.UseRouting();
+
+                app.UseAuthorization();
+
+                app.MapRazorPages();
+
+                app.Run();
             }
-
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.MapRazorPages();
-
-            app.Run();
         }
     }
-}
+
