@@ -1,5 +1,5 @@
 ﻿@page
-@model RestoStockDB.Pages.DetallesPlato.IndexModel
+@model RestoStockDB.Pages.DetallePlato.IndexModel
 @{
     ViewData["Title"] = "Index Detalles de Platos";
 }
@@ -13,19 +13,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DetallesPlato[0].IdPlato)
+                @Html.DisplayNameFor(model => model.DetallePlato[0].IdPlato)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DetallesPlato[0].IdIngrediente)
+                @Html.DisplayNameFor(model => model.DetallePlato[0].IdIngrediente)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DetallesPlato[0].Cantidad)
+                @Html.DisplayNameFor(model => model.DetallePlato[0].Cantidad)
             </th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Detalles)
+        @foreach (var item in Model.DetallePlato)
         {
                 <tr>
                     <td>
