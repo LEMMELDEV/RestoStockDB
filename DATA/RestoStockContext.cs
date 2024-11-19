@@ -6,7 +6,7 @@ namespace RestoStockDB.DATA
 {
     public class RestoStockContext : DbContext
     {
-        public DbSet<DetallesPlato> DetallesPlatos { get; set; }
+        public DbSet<DetallePlato> DetallesPlatos { get; set; }
         public DbSet<Ingredientes> Ingrediente { get; set; }
         public DbSet<Pedidos> Pedido { get; set; }
         public DbSet<Proveedores> Proveedor { get; set; }
