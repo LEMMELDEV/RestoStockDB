@@ -27,7 +27,7 @@ namespace RestoStockDB.Pages.Proveedor
         {
             if (!ModelState.IsValid || _context.Proveedor == null || Proveedores == null)
             {
-                return Page();
+               // return Page();
             }
 
             _context.Proveedor.Add(Proveedores);
