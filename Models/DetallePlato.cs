@@ -1,4 +1,5 @@
 ﻿namespace RestoStockDB.Models
+
 {
     public class DetallePlato
     {
