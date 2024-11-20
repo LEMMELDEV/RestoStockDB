@@ -1,0 +1,27 @@
+﻿@page
+@model RestoStockDB.Pages.DetallesPlatos.CreateModel
+@{
+    ViewData["Title"] = "Crear Detalle de Plato";
+}
+
+<h1>Crear Detalle de Plato</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="DetallePlato.IdPlato"></label>
+        <select asp-for="DetallePlato.IdPlato" asp-items="Model.PlatosList" class="form-control"></select>
+        <span asp-validation-for="DetallePlato.IdPlato" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DetallePlato.IdIngrediente"></label>
+        <select asp-for="DetallePlato.IdIngrediente" asp-items="Model.IngredientesList" class="form-control"></select>
+        <span asp-validation-for="DetallePlato.IdIngrediente" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DetallePlato.Cantidad"></label>
+        <input asp-for="DetallePlato.Cantidad" class="form-control" />
+        <span asp-validation-for="DetallePlato.Cantidad" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-page="./Index" class="btn btn-secondary">Cancelar</a>
+</form>
