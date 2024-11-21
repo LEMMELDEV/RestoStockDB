@@ -1,0 +1,52 @@
+﻿@page
+@model RestoStockDB.Pages.DetallePlato.IndexModel
+
+@{
+    ViewData["Title"] = "Detalles de Platos";
+}
+
+<h1>Detalles de Platos</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Agregar Nuevo Detalle</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id Detalle</th>
+            <th>Id Plato</th>
+            <th>Id Ingrediente</th>
+            <th>Plato</th>
+            <th>Ingrediente</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.DetallesPlatos != null && Model.DetallesPlatos.Any())
+        {
+            @foreach (var item in Model.DetallesPlatos)
+            {
+                <tr>
+                    <td>@item.IdDetalle</td>
+                    <td>@item.IdPlato</td>
+                    <td>@item.IdIngrediente</td>
+                    <td>@item.Platos?.Nombre ?? "N/A"</td>
+                    <td>@item.Ingredientes?.Nombre ?? "N/A"</td>
+                    <td>@item.Cantidad</td>
+                    <td>
+                        <a asp-page="Edit" asp-route-id="@item.IdDetalle" class="btn btn-warning btn-sm">Editar</a>
+                        <a asp-page="Delete" asp-route-id="@item.IdDetalle" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="7" class="text-center">No hay registros disponibles.</td>
+            </tr>
+        }
+    </tbody>
+</table>
