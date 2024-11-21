@@ -2,7 +2,7 @@
 {
     public class Proveedores
     {
-        public int Id { get; set; } // Llave primaria
+        public int IdProveedor { get; set; } // Llave primaria
         public string NombreEmpresa { get; set; }
         public string Contacto { get; set; }
         public string Telefono { get; set; }
