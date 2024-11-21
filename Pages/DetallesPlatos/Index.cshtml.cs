@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using RestoStockDB.DATA;
 using RestoStockDB.Models;
 
-namespace RestoStockDB.Pages.DetallePlato
+namespace RestoStockDB.Pages.DetallesPlato
 {
     //[Authorize]
     public class IndexModel : PageModel
@@ -19,7 +19,7 @@ namespace RestoStockDB.Pages.DetallePlato
 
         public async Task OnGetAsync()
         {
-            if (_context.DetallePlato != null)
+            if (_context.DetallesPlato != null)
             {
                 DetallePlato = await _context.DetallePlato.ToListAsync();
             }
