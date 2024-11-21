@@ -1,17 +1,16 @@
 ﻿@page
-@model RestoStockDB.Pages.Plato.CreateModel
-
+@model RestoStockDB.Pages.Plato.EditModel
 @{
-    ViewData["Title"] = "CREAR PLATO";
+    ViewData["Title"] = "EDITAR PLATO";
 }
-
-<h1>Crear</h1>
+<h1>Editar</h1>
 <h4>Platos</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Platos.Id" />
             <div class="form-group">
                 <label asp-for="Platos.Nombre" class="control-label"></label>
                 <input asp-for="Platos.Nombre" class="form-control" />
@@ -19,22 +18,21 @@
             </div>
             <div class="form-group">
                 <label asp-for="Platos.PrecioVenta" class="control-label"></label>
-                <input asp-for="Platos.PrecioVenta" class="control-control" />
+                <input asp-for="Platos.PrecioVenta" class="form-control" />
                 <span asp-validation-for="Platos.PrecioVenta" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Platos.Descripcion" class="control-label"></label>
-                <input asp-for="Platos.Descripcion" class="control-control" />
+                <input asp-for="Platos.Descripcion" class="form-control" />
                 <span asp-validation-for="Platos.Descripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-success" />
-                <a asp-page="Index" class="btn btn-primary">Back to List</a>
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-page="./Index" class="btn btn-primary">Back to List</a>
             </div>
         </form>
     </div>
 </div>
-
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
