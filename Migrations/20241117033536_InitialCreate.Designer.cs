@@ -54,7 +54,7 @@ namespace RestoStockDB.Migrations
 
                     b.HasIndex("PlatosId");
 
-                    b.ToTable("DetallesPlato");
+                    b.ToTable("DetallePlato");
                 });
 
             modelBuilder.Entity("RestoStockDB.Models.Ingredientes", b =>
@@ -170,13 +170,13 @@ namespace RestoStockDB.Migrations
             modelBuilder.Entity("RestoStockDB.Models.DetallePlato", b =>
                 {
                     b.HasOne("RestoStockDB.Models.Ingredientes", "Ingredientes")
-                        .WithMany("DetallesPlato")
+                        .WithMany("DetallePlato")
                         .HasForeignKey("IngredientesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("RestoStockDB.Models.Platos", "Platos")
-                        .WithMany("DetallesPlato")
+                        .WithMany("DetallePlato")
                         .HasForeignKey("PlatosId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -199,12 +199,12 @@ namespace RestoStockDB.Migrations
 
             modelBuilder.Entity("RestoStockDB.Models.Ingredientes", b =>
                 {
-                    b.Navigation("DetallesPlato");
+                    b.Navigation("DetallePlato");
                 });
 
             modelBuilder.Entity("RestoStockDB.Models.Platos", b =>
                 {
-                    b.Navigation("DetallesPlato");
+                    b.Navigation("DetallePlato");
                 });
 
             modelBuilder.Entity("RestoStockDB.Models.Proveedores", b =>

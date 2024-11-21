@@ -21,7 +21,7 @@ namespace RestoStockDB.Pages.Proveedor
             {
                 return NotFound();
             }
-            var proveedores = await _context.Proveedor.FirstOrDefaultAsync(m => m.Id == id);
+            var proveedores = await _context.Proveedor.FirstOrDefaultAsync(m => m.IdProveedor == id);
             if (proveedores == null)
             {
                 return NotFound();

@@ -13,14 +13,14 @@ namespace RestoStockDB.Pages.Plato
             _context = context;
         }
         [BindProperty]
-        public Platos Platos { get; set; } = default!;
+        public Proovedores Platos { get; set; } = default!;
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Plato == null)
+            if (id == null || _context.Proovedor == null)
             {
                 return NotFound();
             }
-            var platos = await _context.Plato.FirstOrDefaultAsync(m => m.Id == id);
+            var platos = await _context.Proovedor.FirstOrDefaultAsync(m => m.IdPlato == id);
             if (platos == null)
             {
                 return NotFound();
@@ -34,13 +34,13 @@ namespace RestoStockDB.Pages.Plato
         public async Task<IActionResult> OnPostAsync(int? id)
         {
             // Verifica si el id es nulo o si el contexto de métodos de pago es nulo.
-            if (id == null || _context.Plato == null)
+            if (id == null || _context.Proovedor == null)
             {
                 // Si alguna de las condiciones anteriores es verdadera, se devuelve un error 404 (Not Found).
                 return NotFound();
             }
             // Busca el Plato con el id proporcionado de forma asíncrona.
-            var Platos = await _context.Plato.FindAsync(id);
+            var Platos = await _context.Proovedor.FindAsync(id);
             // Si el Plato no se encuentra, se devuelve un error 404.
             if (Platos == null)
             {
@@ -48,7 +48,7 @@ namespace RestoStockDB.Pages.Plato
             }
             // Si se encuentra el Plato, se procede a eliminarlo.
             Platos = Platos; // Asigna el Plato encontrado a la propiedad Platos.
-            _context.Plato.Remove(Platos); // Elimina el Plato del contexto.
+            _context.Proovedor.Remove(Platos); // Elimina el Plato del contexto.
             await _context.SaveChangesAsync(); // Guarda los cambios en la base de datos de forma asíncrona.
             // Redirige a la página de índice después de eliminar el Plato.
             return RedirectToPage("./Index");

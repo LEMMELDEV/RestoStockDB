@@ -2,7 +2,7 @@
 
 namespace RestoStockDB.Models
 {
-    public class Platos
+    public class Proovedores
     {
         public int IdPlato { get; set; } // Llave primaria
         public string Nombre { get; set; }

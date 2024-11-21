@@ -15,14 +15,14 @@ namespace RestoStockDB.Pages.Plato
             _context = context;
         }
         [BindProperty]
-        public Platos Platos { get; set; } = default!;
+        public Proovedores Platos { get; set; } = default!;
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Plato == null)
+            if (id == null || _context.Proovedor == null)
             {
                 return NotFound();
             }
-            var platos = await _context.Plato.FirstOrDefaultAsync(m => m.Id == id);
+            var platos = await _context.Proovedor.FirstOrDefaultAsync(m => m.IdPlato == id);
             if (platos == null)
             {
                 return NotFound();
@@ -46,7 +46,7 @@ namespace RestoStockDB.Pages.Plato
             }
             catch (DbUpdateConcurrencyException) // Si ocurre un error de concurrencia
             {
-                if (!PlatosExists(Platos.Id)) // Si la categoría ya no existe
+                if (!PlatosExists(Platos.IdPlato)) // Si la categoría ya no existe
                 {
                     return NotFound(); // Devuelve un error 404
                 }
@@ -59,7 +59,7 @@ namespace RestoStockDB.Pages.Plato
         }
         private bool PlatosExists(int id)
         {
-            return (_context.Plato?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Proovedor?.Any(e => e.IdPlato == id)).GetValueOrDefault();
         }
     }
 }

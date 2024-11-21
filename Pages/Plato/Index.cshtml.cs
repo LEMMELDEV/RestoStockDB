@@ -17,13 +17,13 @@ namespace RestoStockDB.Pages.Plato
             _context = context;
         }
 
-        public IList<Platos> Plato { get; set; } = default!;
+        public IList<Proovedores> Plato { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.Plato != null)
+            if (_context.Proovedor != null)
             {
-                Plato = await _context.Plato.ToListAsync();
+                Plato = await _context.Proovedor.ToListAsync();
             }
         }
     }

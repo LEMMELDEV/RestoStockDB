@@ -11,52 +11,52 @@ namespace RestoStockDB.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_DetallesPlato_Ingrediente_IngredientesId",
-                table: "DetallesPlato");
+                name: "FK_  DetallePlato_Ingrediente_IngredientesId",
+                table: "DetallePlato");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_DetallesPlato_Plato_PlatosId",
-                table: "DetallesPlato");
+                name: "FK_DetallePlato_Plato_PlatosId",
+                table: "DetallePlato");
 
             migrationBuilder.DropPrimaryKey(
-                name: "PK_DetallesPlato",
-                table: "DetallesPlato");
+                name: "PK_DetallePlato",
+                table: "DetallePlato");
 
             migrationBuilder.RenameTable(
-                name: "DetallesPlato",
-                newName: "DetallesPlatos");
+                name: "DetallePlato",
+                newName: "DetallePlato");
 
             migrationBuilder.RenameColumn(
                 name: "IdDetalle",
-                table: "DetallesPlatos",
+                table: "DetallePlato",
                 newName: "IdPlato");
 
             migrationBuilder.RenameIndex(
-                name: "IX_DetallesPlato_PlatosId",
-                table: "DetallesPlatos",
-                newName: "IX_DetallesPlatos_PlatosId");
+                name: "IX_DetallePlato_PlatosId",
+                table: "DetallePlato",
+                newName: "IX_DetallePlato_PlatosId");
 
             migrationBuilder.RenameIndex(
-                name: "IX_DetallesPlato_IngredientesId",
-                table: "DetallesPlatos",
-                newName: "IX_DetallesPlatos_IngredientesId");
+                name: "IX_DetallePlato_IngredientesId",
+                table: "DetallePlato",
+                newName: "IX_DetallePlato_IngredientesId");
 
             migrationBuilder.AddPrimaryKey(
-                name: "PK_DetallesPlatos",
-                table: "DetallesPlatos",
+                name: "PK_DetallePlato",
+                table: "DetallePlato",
                 column: "Id");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_DetallesPlatos_Ingrediente_IngredientesId",
-                table: "DetallesPlatos",
+                name: "FK_DetallePlato_Ingrediente_IngredientesId",
+                table: "DetallePlato",
                 column: "IngredientesId",
                 principalTable: "Ingrediente",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_DetallesPlatos_Plato_PlatosId",
-                table: "DetallesPlatos",
+                name: "FK_DetallePlato_Plato_PlatosId",
+                table: "DetallePlato",
                 column: "PlatosId",
                 principalTable: "Plato",
                 principalColumn: "Id",
@@ -67,52 +67,52 @@ namespace RestoStockDB.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_DetallesPlatos_Ingrediente_IngredientesId",
-                table: "DetallesPlatos");
+                name: "FK_DetallePlato_Ingrediente_IngredientesId",
+                table: "DetallePlato");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_DetallesPlatos_Plato_PlatosId",
-                table: "DetallesPlatos");
+                name: "FK_DetallePlato_Plato_PlatosId",
+                table: "DetallePlato");
 
             migrationBuilder.DropPrimaryKey(
-                name: "PK_DetallesPlatos",
-                table: "DetallesPlatos");
+                name: "PK_DetallePlato",
+                table: "    ");
 
             migrationBuilder.RenameTable(
-                name: "DetallesPlatos",
-                newName: "DetallesPlato");
+                name: "DetallePlato",
+                newName: "DetallePlato");
 
             migrationBuilder.RenameColumn(
                 name: "IdPlato",
-                table: "DetallesPlato",
+                table: "DetallePlato",
                 newName: "IdDetalle");
 
             migrationBuilder.RenameIndex(
-                name: "IX_DetallesPlatos_PlatosId",
-                table: "DetallesPlato",
-                newName: "IX_DetallesPlato_PlatosId");
+                name: "IX_DetallePlato_PlatosId",
+                table: "DetallePlato",
+                newName: "IX_DetallePlato_PlatosId");
 
             migrationBuilder.RenameIndex(
-                name: "IX_DetallesPlatos_IngredientesId",
-                table: "DetallesPlato",
-                newName: "IX_DetallesPlato_IngredientesId");
+                name: "IX_DetallePlato_IngredientesId",
+                table: "DetallePlato",
+                newName: "IX_DetallePlato_IngredientesId");
 
             migrationBuilder.AddPrimaryKey(
-                name: "PK_DetallesPlato",
-                table: "DetallesPlato",
+                name: "PK_DetallePlato",
+                table: "DetallePlato",
                 column: "Id");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_DetallesPlato_Ingrediente_IngredientesId",
-                table: "DetallesPlato",
+                name: "FK_DetallePlato_Ingrediente_IngredientesId",
+                table: "DetallePlato",
                 column: "IngredientesId",
                 principalTable: "Ingrediente",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_DetallesPlato_Plato_PlatosId",
-                table: "DetallesPlato",
+                name: "FK_DetallePlato_Plato_PlatosId",
+                table: "DetallePlato",
                 column: "PlatosId",
                 principalTable: "Plato",
                 principalColumn: "Id",

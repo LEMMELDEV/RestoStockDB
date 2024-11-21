@@ -6,7 +6,7 @@
 
         // Llaves foráneas
         public int IdPlato { get; set; }
-        public Platos Platos { get; set; }
+        public Proovedores Platos { get; set; }
 
         public int IdIngrediente { get; set; }
         public Ingredientes Ingredientes { get; set; }

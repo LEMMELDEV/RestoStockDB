@@ -21,18 +21,18 @@ namespace RestoStockDB.Pages.Plato
 
         [BindProperty]
         public
-     Platos Platos
+     Proovedores Platos
         { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Plato == null || Platos == null)
+            if (!ModelState.IsValid || _context.Proovedor == null || Platos == null)
             {
                 return Page();
 
             }
 
-            _context.Plato.Add(Platos);
+            _context.Proovedor.Add(Platos);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

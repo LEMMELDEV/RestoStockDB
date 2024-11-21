@@ -22,7 +22,7 @@ namespace RestoStockDB.Pages.Proveedor
             {
                 return NotFound();
             }
-            var proveedores = await _context.Proveedor.FirstOrDefaultAsync(m => m.Id == id);
+            var proveedores = await _context.Proveedor.FirstOrDefaultAsync(m => m.IdProveedor == id);
             if (proveedores == null)
             {
                 return NotFound();
@@ -46,7 +46,7 @@ namespace RestoStockDB.Pages.Proveedor
             }
             catch (DbUpdateConcurrencyException) // Si ocurre un error de concurrencia
             {
-                if (!ProveedoresExists(Proveedores.Id)) // Si el proveedor ya no existe
+                if (!ProveedoresExists(Proveedores.IdProveedor)) // Si el proveedor ya no existe
                 {
                     return NotFound(); // Devuelve un error 404
                 }
@@ -59,7 +59,7 @@ namespace RestoStockDB.Pages.Proveedor
         }
         private bool ProveedoresExists(int id)
         {
-            return (_context.Proveedor?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Proveedor?.Any(e => e.IdProveedor == id)).GetValueOrDefault();
         }
     }
 }

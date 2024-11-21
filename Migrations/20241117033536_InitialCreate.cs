@@ -60,7 +60,7 @@ namespace RestoStockDB.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DetallesPlato",
+                name: "DetallePlato",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -73,15 +73,15 @@ namespace RestoStockDB.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DetallesPlato", x => x.Id);
+                    table.PrimaryKey("PK_DetallePlato", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DetallesPlato_Ingrediente_IngredientesId",
+                        name: "FK_DetallePlato_Ingrediente_IngredientesId",
                         column: x => x.IngredientesId,
                         principalTable: "Ingrediente",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_DetallesPlato_Plato_PlatosId",
+                        name: "FK_DetallePlato_Plato_PlatosId",
                         column: x => x.PlatosId,
                         principalTable: "Plato",
                         principalColumn: "Id",
@@ -111,13 +111,13 @@ namespace RestoStockDB.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_DetallesPlato_IngredientesId",
-                table: "DetallesPlato",
+                name: "IX_DetallePlato_IngredientesId",
+                table: "DetallePlato",
                 column: "IngredientesId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DetallesPlato_PlatosId",
-                table: "DetallesPlato",
+                name: "IX_DetallsPlato_PlatosId",
+                table: "DetallePlato",
                 column: "PlatosId");
 
             migrationBuilder.CreateIndex(
@@ -130,7 +130,7 @@ namespace RestoStockDB.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "DetallesPlato");
+                name: "DetallePlato");
 
             migrationBuilder.DropTable(
                 name: "Pedido");

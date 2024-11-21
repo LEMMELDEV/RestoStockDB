@@ -10,7 +10,7 @@ namespace RestoStockDB.DATA
         public DbSet<Ingredientes> Ingrediente { get; set; }
         public DbSet<Pedidos> Pedido { get; set; }
         public DbSet<Proveedores> Proveedor { get; set; }
-        public DbSet<Platos> Plato { get; set; }
+        public DbSet<Proovedores> Proovedor { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
