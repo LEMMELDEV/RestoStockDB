@@ -15,14 +15,15 @@ namespace RestoStockDB.Pages.DetallePlato
             _context = context;
         }
 
-        public IList<DetallePlato> DetallePlato { get; set; } = default!;
+        public IList<DetallesPlato> DetallePlato { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
             if (_context.DetallePlato != null)
             {
-                DetallesPlato = await _context.DetallePlato.ToListAsync();
+                DetallePlato = await _context.DetallePlato.ToListAsync();
             }
         }
     }
 }
+

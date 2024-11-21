@@ -27,21 +27,21 @@
     <tbody>
         @foreach (var item in Model.DetallePlato)
         {
-                <tr>
-                    <td>
+            <tr>
+                <td>
                     @Html.DisplayFor(modelItem => item.IdPlato)
-                    </td>
-                    <td>
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.IdIngrediente)
-                    </td>
-                    <td>
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Cantidad)
-                    </td>
-                    <td>
-                        <a asp-page="./Edit" asp-route-id="@item.IdDetalle" class="btn btn-warning">Edit</a>
-                        <a asp-page="./Delete" asp-route-id="@item.IdDetalle" class="btn btn-danger">Delete</a>
-                    </td>
-                </tr>
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.IdDetalle" class="btn btn-warning">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.IdDetalle" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

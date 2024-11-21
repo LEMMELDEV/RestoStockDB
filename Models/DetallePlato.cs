@@ -3,7 +3,7 @@
 {
     public class DetallePlato
     {
-        public int IdDetalle { get; set; } // Llave primaria
+        public int Id { get; set; } // Llave primaria
 
         // Llaves foráneas
         public int Id { get; set; }
@@ -15,4 +15,5 @@
         public decimal Cantidad { get; set; }
 
     }
+
 }
