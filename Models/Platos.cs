@@ -1,4 +1,6 @@
-﻿namespace RestoStockDB.Models
+﻿using RestoStockDB.DATA;
+
+namespace RestoStockDB.Models
 {
     public class Platos
     {
